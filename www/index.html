@@ -11,20 +11,12 @@
         var ncmb = new NCMB(appKey, clientKey);
 
         function startDemo() {
-            var TestClass = ncmb.DataStore("TestClass");
+            var TestClass = ncmb.DataStore("TestClass1");
             var testClass = new TestClass();
-            var key   = "message";
-            var value = "Hello, NCMB!";
+            var key   = "test0";
+            var value = "Hello, KSU";
             testClass.set(key, value);
-            testClass.save()
-                .then(function() {
-                    // 保存完了後に実行される
-                    alert("New object created with objectId: " + testClass.objectId);
-                })
-                .catch(function(error) {
-                    // エラー時に実行される
-                    alert("Failed to create new object, with error code: " + error.text);
-                });
+            testClass.save();
         }
     </script>
 </head>
