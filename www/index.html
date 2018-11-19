@@ -18,6 +18,16 @@
             testClass.set(key, value);
             testClass.save();
         }
+
+        function fetchDemo() {
+          var TestClass = ncmb.DataStore("TestClass");
+          TestClass.fetch()
+          .then(function(results){
+            var data = results.get("message");
+            var update = results.get("updateDate");
+            $("#fetch").html(data + ":" + update);
+          })
+        }
     </script>
 </head>
 <body>
